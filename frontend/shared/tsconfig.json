@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "outDir": "../dist/shared",
+    "target": "ES5",
+    "noEmit": false,
+    "module": "commonjs",
+    "composite": true,
+    "declaration": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./**/*",
+    "./**/colors.json",
+    "../tests"
+  ],
+  "exclude": [
+    "./**/*.test.ts"
+  ]
+}
