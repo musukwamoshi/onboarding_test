@@ -15,7 +15,6 @@ def hello_world(request):
 
 @api_view(['GET'])
 def training_modules(request):
-    #logic to query tarining module logic
     userActivities = Activity.objects.all()
     data = ActivitySerializer(userActivities, many=True).data
     return JsonResponse(data, safe=False)
@@ -23,7 +22,6 @@ def training_modules(request):
 
 @api_view(['GET'])
 def get_user_activity_log(request):
-    #logic to query user_activity_logs
     userActivityLogs = UserActivityLog.objects.all()
     data = UserActivityLogSerializer(userActivityLogs, many=True).data
     return JsonResponse(data, safe=False)
@@ -31,7 +29,6 @@ def get_user_activity_log(request):
 
 @api_view(['POST'])
 def log_user_activity(request):
-    #logic to query user_activity_logs
     score = do_training()
     activity_id = request.data.get("activity_id")
     User = apps.get_model("auth", "User")
